@@ -4,19 +4,19 @@ project(gl_renderer)
 option(GLFW_BUILD_DOCS OFF)
 option(GLFW_BUILD_EXAMPLES OFF)
 option(GLFW_BUILD_TESTS OFF)
-add_subdirectory(Glitter/Vendor/glfw)
+add_subdirectory(vendor/glfw)
 
 option(ASSIMP_BUILD_ASSIMP_TOOLS OFF)
 option(ASSIMP_BUILD_SAMPLES OFF)
 option(ASSIMP_BUILD_TESTS OFF)
-add_subdirectory(Glitter/Vendor/assimp)
+add_subdirectory(vendor/assimp)
 
 option(BUILD_BULLET2_DEMOS OFF)
 option(BUILD_CPU_DEMOS OFF)
 option(BUILD_EXTRAS OFF)
 option(BUILD_OPENGL3_DEMOS OFF)
 option(BUILD_UNIT_TESTS OFF)
-add_subdirectory(Glitter/Vendor/bullet)
+add_subdirectory(vendor/bullet3)
 
 if(MSVC)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
@@ -28,14 +28,14 @@ else()
 endif()
 
 include_directories(src/Headers/
-                    Glitter/Vendor/assimp/include/
-                    Glitter/Vendor/bullet/src/
-                    Glitter/Vendor/glad/include/
-                    Glitter/Vendor/glfw/include/
-                    Glitter/Vendor/glm/
-                    Glitter/Vendor/stb/)
+                    vendor/assimp/include/
+                    vendor/bullet3/src/
+                    vendor/glad/include/
+                    vendor/glfw/include/
+                    vendor/glm/
+                    vendor/stb/)
 
-file(GLOB VENDORS_SOURCES Glitter/Vendor/glad/src/glad.c)
+file(GLOB VENDORS_SOURCES vendor/glad/src/glad.c)
 file(GLOB PROJECT_HEADERS src/Headers/*.hpp)
 file(GLOB PROJECT_SOURCES src/Sources/*.cpp)
 file(GLOB PROJECT_SHADERS src/Shaders/*.comp
