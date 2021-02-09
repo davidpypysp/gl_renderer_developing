@@ -1,7 +1,7 @@
-[submodule "vendor/assimp"]
+[submodule "assimp"]
 	path = vendor/assimp
 	url = https://github.com/assimp/assimp.git
-[submodule "vendor/glad"]
+[submodule "glad"]
 	path = vendor/glad
 	url = https://github.com/Dav1dde/glad.git
     branch = c
