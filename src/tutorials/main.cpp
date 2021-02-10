@@ -1,5 +1,5 @@
 // Local Headers
-#include "glitter.hpp"
+#include "local.hpp"
 
 // System Headers
 #include <glad/glad.h>
@@ -8,7 +8,7 @@
 // Standard Headers
 #include <cstdio>
 #include <cstdlib>
-#include "glitter.hpp"
+#include "local.hpp"
 
 namespace gl_examples
 {

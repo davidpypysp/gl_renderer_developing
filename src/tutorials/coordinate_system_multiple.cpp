@@ -1,12 +1,16 @@
-#include "glitter.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <GLFW/glfw3.h>
+
+#include "local.hpp"
+#include "shader.hpp"
 
 namespace gl_examples
 {
-
-    int CameraClass()
+    int CoordinateSystemMultiple()
     {
 
-        // ------------------------------
         glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -27,11 +31,6 @@ namespace gl_examples
         }
         glfwMakeContextCurrent(window);
         glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-        glfwSetCursorPosCallback(window, mouse_callback);
-        glfwSetScrollCallback(window, scroll_callback);
-
-        // tell GLFW to capture our mouse
-        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
         // glad: load all OpenGL function pointers
         // ---------------------------------------
@@ -47,7 +46,7 @@ namespace gl_examples
 
         // build and compile our shader zprogram
         // ------------------------------------
-        Shader ourShader("7.4.camera.vert", "7.4.camera.frag");
+        Shader ourShader("6.3.coordinate_systems.vert", "6.3.coordinate_systems.frag");
 
         // set up vertex data (and buffer(s)) and configure vertex attributes
         // ------------------------------------------------------------------
@@ -93,7 +92,6 @@ namespace gl_examples
             0.5f, 0.5f, 0.5f, 1.0f, 0.0f,
             -0.5f, 0.5f, 0.5f, 0.0f, 0.0f,
             -0.5f, 0.5f, -0.5f, 0.0f, 1.0f};
-
         // world space positions of our cubes
         glm::vec3 cubePositions[] = {
             glm::vec3(0.0f, 0.0f, 0.0f),
@@ -106,7 +104,6 @@ namespace gl_examples
             glm::vec3(1.5f, 2.0f, -2.5f),
             glm::vec3(1.5f, 0.2f, -1.5f),
             glm::vec3(-1.3f, 1.0f, -1.5f)};
-
         unsigned int VBO, VAO;
         glGenVertexArrays(1, &VAO);
         glGenBuffers(1, &VBO);
@@ -161,8 +158,7 @@ namespace gl_examples
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         // load image, create texture and generate mipmaps
-        data = stbi_load("resources/test1.jpg", &width, &height, &nrChannels, 0);
-
+        data = stbi_load("resources/wall.jpg", &width, &height, &nrChannels, 0);
         if (data)
         {
             // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
@@ -183,21 +179,9 @@ namespace gl_examples
 
         while (!glfwWindowShouldClose(window))
         {
-
-            float currentFrame = glfwGetTime();
-            deltaTime = currentFrame - lastFrame;
-            lastFrame = currentFrame;
-
-            // input
-            // -----
-            processInput(window);
-
-            // render
-            // ------
             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            // bind textures on corresponding texture units
             glActiveTexture(GL_TEXTURE0);
             glBindTexture(GL_TEXTURE_2D, texture1);
             glActiveTexture(GL_TEXTURE1);
@@ -205,10 +189,12 @@ namespace gl_examples
 
             ourShader.use();
 
-            glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)mWidth / (float)mHeight, 0.1f, 100.0f);
-            ourShader.setMat4("projection", projection);
+            glm::mat4 view = glm::mat4(1.0f);
+            glm::mat4 projection = glm::mat4(1.0f);
+            projection = glm::perspective(glm::radians(45.0f), (float)mWidth / (float)mHeight, 0.1f, 100.0f);
+            view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
-            glm::mat4 view = camera.GetViewMatrix();
+            ourShader.setMat4("projection", projection);
             ourShader.setMat4("view", view);
 
             glBindVertexArray(VAO);
@@ -219,19 +205,18 @@ namespace gl_examples
                 float angle = 20.0f * i;
                 model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
                 ourShader.setMat4("model", model);
-
                 glDrawArrays(GL_TRIANGLES, 0, 36);
             }
 
             glfwSwapBuffers(window);
             glfwPollEvents();
         }
+
         glDeleteVertexArrays(1, &VAO);
         glDeleteBuffers(1, &VBO);
 
-        // glfw: terminate, clearing all previously allocated GLFW resources.
-        // ------------------------------------------------------------------
         glfwTerminate();
         return 0;
     }
+
 } // namespace gl_examples

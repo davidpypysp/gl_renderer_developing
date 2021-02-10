@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "glitter.hpp"
+#include "local.hpp"
 #include "shader.hpp"
 
 namespace gl_examples

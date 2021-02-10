@@ -1,7 +1,7 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "glitter.hpp"
+#include "local.hpp"
 #include "mesh.hpp"
 
 using namespace std;

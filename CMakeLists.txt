@@ -27,7 +27,7 @@ else()
     endif()
 endif()
 
-include_directories(src/Headers/
+include_directories(src/headers/
                     vendor/assimp/include/
                     vendor/bullet3/src/
                     vendor/glad/include/
@@ -36,12 +36,12 @@ include_directories(src/Headers/
                     vendor/stb/)
 
 file(GLOB VENDORS_SOURCES vendor/glad/src/glad.c)
-file(GLOB PROJECT_HEADERS src/Headers/*.hpp)
-file(GLOB PROJECT_SOURCES src/Sources/*.cpp)
-file(GLOB PROJECT_SHADERS src/Shaders/*.comp
-                          src/Shaders/*.frag
-                          src/Shaders/*.geom
-                          src/Shaders/*.vert)
+file(GLOB PROJECT_HEADERS src/headers/*.hpp)
+file(GLOB PROJECT_SOURCES src/tutorials/*.cpp)
+file(GLOB PROJECT_SHADERS src/shaders/*.comp
+                          src/shaders/*.frag
+                          src/shaders/*.geom
+                          src/shaders/*.vert)
 file(GLOB PROJECT_CONFIGS CMakeLists.txt
                           Readme.md
                          .gitattributes

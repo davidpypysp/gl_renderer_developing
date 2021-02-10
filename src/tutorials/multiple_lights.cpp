@@ -1,4 +1,4 @@
-#include "glitter.hpp"
+#include "local.hpp"
 
 namespace gl_examples
 {

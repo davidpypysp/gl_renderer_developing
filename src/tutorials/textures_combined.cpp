@@ -1,7 +1,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 
 #include "shader.hpp"
-#include "glitter.hpp"
+#include "local.hpp"
 
 namespace gl_examples
 {
