@@ -8,7 +8,6 @@
 // Standard Headers
 #include <cstdio>
 #include <cstdlib>
-#include "local.hpp"
 
 namespace gl_examples
 {
@@ -72,5 +71,5 @@ namespace gl_examples
 
 int main(int argc, char *argv[])
 {
-    return gl_examples::ModelProgram();
+    return gl_examples::StencilTestingProgram();
 }

@@ -56,6 +56,7 @@ namespace gl_examples
     int MaterialProgram();
     int MultipleLights();
     int ModelProgram();
+    int StencilTestingProgram();
 } // namespace gl_examples
 
 #endif //~ Glitter Header
