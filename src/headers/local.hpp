@@ -58,6 +58,9 @@ namespace gl_examples
     int ModelProgram();
     int StencilTestingProgram();
     int BlendingSorted();
+    int FrameBuffers();
+    int CubemapEnvironmentMapping();
+    int AdvancedGLSLUbo();
 } // namespace gl_examples
 
 #endif //~ Glitter Header
