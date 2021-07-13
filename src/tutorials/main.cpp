@@ -71,5 +71,5 @@ namespace gl_examples
 
 int main(int argc, char *argv[])
 {
-    return gl_examples::CubemapEnvironmentMapping();
+    return gl_examples::NormalVisualization();
 }

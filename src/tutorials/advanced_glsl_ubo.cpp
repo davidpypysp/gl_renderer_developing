@@ -2,7 +2,7 @@
 
 namespace gl_examples
 {
-    unsigned int AdvancedGLSLUbo()
+    int AdvancedGLSLUbo()
     {
         // glfw: initialize and configure
         // ------------------------------
@@ -17,7 +17,7 @@ namespace gl_examples
 
         // glfw window creation
         // --------------------
-        GLFWwindow *window = glfwCreateWindow(mWidth, mHeight, "LearnOpenGL", NULL, NULL);
+        GLFWwindow *window = glfwCreateWindow(mWidth, mHeight, "Advanced ubo", NULL, NULL);
         if (window == NULL)
         {
             std::cout << "Failed to create GLFW window" << std::endl;
@@ -42,10 +42,10 @@ namespace gl_examples
 
         glEnable(GL_DEPTH_TEST);
 
-        Shader shaderRed("8.advanced_glsl.vs", "8.red.fs");
-        Shader shaderGreen("8.advanced_glsl.vs", "8.green.fs");
-        Shader shaderBlue("8.advanced_glsl.vs", "8.blue.fs");
-        Shader shaderYellow("8.advanced_glsl.vs", "8.yellow.fs");
+        Shader shaderRed("4.8.advanced_glsl.vert", "4.8.red.frag");
+        Shader shaderGreen("4.8.advanced_glsl.vert", "4.8.green.frag");
+        Shader shaderBlue("4.8.advanced_glsl.vert", "4.8.blue.frag");
+        Shader shaderYellow("4.8.advanced_glsl.vert", "4.8.yellow.frag");
 
         // set up vertex data (and buffer(s)) and configure vertex attributes
         // ------------------------------------------------------------------
@@ -179,6 +179,11 @@ namespace gl_examples
         unsigned int uniformBlockIndexGreen = glGetUniformBlockIndex(shaderGreen.ID, "Matrices");
         unsigned int uniformBlockIndexBlue = glGetUniformBlockIndex(shaderBlue.ID, "Matrices");
         unsigned int uniformBlockIndexYellow = glGetUniformBlockIndex(shaderYellow.ID, "Matrices");
+        // then we link each shader's uniform block to this uniform binding point
+        glUniformBlockBinding(shaderRed.ID, uniformBlockIndexRed, 0);
+        glUniformBlockBinding(shaderGreen.ID, uniformBlockIndexGreen, 0);
+        glUniformBlockBinding(shaderBlue.ID, uniformBlockIndexBlue, 0);
+        glUniformBlockBinding(shaderYellow.ID, uniformBlockIndexYellow, 0);
 
         unsigned int uboMatrices;
         glGenBuffers(1, &uboMatrices);
@@ -187,7 +192,7 @@ namespace gl_examples
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
         glBindBufferRange(GL_UNIFORM_BUFFER, 0, uboMatrices, 0, 2 * sizeof(glm::mat4));
 
-        glm::mat4 projection = glm::perspective(45.0f, (float)mWidth / (float)mHeight, 0.1, 100.0);
+        glm::mat4 projection = glm::perspective(45.0f, (float)mWidth / (float)mHeight, 0.1f, 100.0f);
         glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
         glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
         glBindBuffer(GL_UNIFORM_BUFFER, 0);

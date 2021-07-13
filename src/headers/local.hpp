@@ -61,6 +61,9 @@ namespace gl_examples
     int FrameBuffers();
     int CubemapEnvironmentMapping();
     int AdvancedGLSLUbo();
+    int GeometryShaderHouses();
+    int GeometryShaderExploding();
+    int NormalVisualization();
 } // namespace gl_examples
 
 #endif //~ Glitter Header
