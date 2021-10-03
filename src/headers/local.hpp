@@ -26,44 +26,50 @@
 
 namespace gl_examples
 {
-    // Define Some Constants
-    const int mWidth = 1280;
-    const int mHeight = 800;
+	// Define Some Constants
+	const int mWidth = 1280;
+	const int mHeight = 800;
 
-    extern Camera camera;
-    extern float lastX;
-    extern float lastY;
-    extern bool firstMouse;
+	extern Camera camera;
+	extern float lastX;
+	extern float lastY;
+	extern bool firstMouse;
 
-    // timing
-    extern float deltaTime; // time between current frame and last frame
-    extern float lastFrame;
+	// timing
+	extern float deltaTime; // time between current frame and last frame
+	extern float lastFrame;
 
-    void framebuffer_size_callback(GLFWwindow *window, int width, int height);
-    void processInput(GLFWwindow *window);
-    void mouse_callback(GLFWwindow *window, double xpos, double ypos);
-    void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+	void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+	void processInput(GLFWwindow *window);
+	void mouse_callback(GLFWwindow *window, double xpos, double ypos);
+	void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+	unsigned int loadTexture(char const *path, bool gammaCorrection = false);
 
-    int HelloWindow();
-    int HelloTriangle();
-    int Shaders();
-    int TexturesCombined();
-    int Transformations();
-    int CoordinateSystemMultiple();
-    int CameraClass();
-    int ColorsProgram();
-    int BasicLightingProgram();
-    int MaterialProgram();
-    int MultipleLights();
-    int ModelProgram();
-    int StencilTestingProgram();
-    int BlendingSorted();
-    int FrameBuffers();
-    int CubemapEnvironmentMapping();
-    int AdvancedGLSLUbo();
-    int GeometryShaderHouses();
-    int GeometryShaderExploding();
-    int NormalVisualization();
+	int HelloWindow();
+	int HelloTriangle();
+	int Shaders();
+	int TexturesCombined();
+	int Transformations();
+	int CoordinateSystemMultiple();
+	int CameraClass();
+	int ColorsProgram();
+	int BasicLightingProgram();
+	int MaterialProgram();
+	int MultipleLights();
+	int ModelProgram();
+	int StencilTestingProgram();
+	int BlendingSorted();
+	int FrameBuffers();
+	int CubemapEnvironmentMapping();
+	int AdvancedGLSLUbo();
+	int GeometryShaderHouses();
+	int GeometryShaderExploding();
+	int NormalVisualization();
+	int AsteroidsInstanced();
+	int AdvancedLighting();
+	int GammaCorrection();
+	int ShadowMapping();
+	int PointShadowsSoft();
 } // namespace gl_examples
 
 #endif //~ Glitter Header
