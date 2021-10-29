@@ -1,7 +1,6 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "local.hpp"
 #include "mesh.hpp"
 
 using namespace std;

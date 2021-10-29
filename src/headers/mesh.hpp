@@ -1,7 +1,6 @@
 #ifndef MESH_H
 #define MESH_H
 
-#include "local.hpp"
 #include "shader.hpp"
 
 using namespace std;

@@ -1,10 +1,7 @@
-#include "local.hpp"
 #include "global.hpp"
 
 namespace gl_examples
 {
-
-
 	bool shadows = true;
 	bool shadowsKeyPressed = false;
 
@@ -291,6 +288,5 @@ namespace gl_examples
 }
 
 int main() {
-	std::cout << "point_shadows_soft_5.3.1" << std::endl;
 	return gl_examples::PointShadowsSoft();
 }

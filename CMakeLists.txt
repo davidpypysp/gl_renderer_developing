@@ -27,7 +27,8 @@ else()
     endif()
 endif()
 
-include_directories(src/headers/
+include_directories(src/
+                    src/headers/ # TODO: remove src/headers after refactor the whole source structure
                     vendor/assimp/include/
                     vendor/bullet3/src/
                     vendor/glad/include/
@@ -47,11 +48,6 @@ file(GLOB PROJECT_CONFIGS CMakeLists.txt
                          .gitattributes
                          .gitignore
                          .gitmodules)
-
-source_group("Headers" FILES ${PROJECT_HEADERS})
-source_group("Shaders" FILES ${PROJECT_SHADERS})
-source_group("Sources" FILES ${PROJECT_SOURCES})
-source_group("Vendors" FILES ${VENDORS_SOURCES})
 
 add_definitions(-DGLFW_INCLUDE_NONE
                 -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
