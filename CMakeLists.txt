@@ -77,3 +77,5 @@ add_custom_command(
     COMMENT "Copy resource..."
 )
 
+
+add_subdirectory(src/programs)

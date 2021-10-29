@@ -1,0 +1,1 @@
+add_gl_program(point_shadows_soft point_shadows_soft.cpp)
