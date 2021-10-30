@@ -1,4 +1,4 @@
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -152,4 +152,8 @@ namespace glrd
         return 0;
     }
 
+}
+
+int main() {
+    return glrd::AsteroidsInstanced();
 }

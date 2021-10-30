@@ -3,6 +3,7 @@ target_link_libraries(gl_base_lib assimp glfw
                       ${GLFW_LIBRARIES} ${GLAD_LIBRARIES}
                       BulletDynamics BulletCollision LinearMath)
 
+# function to add opengl binary program
 macro(add_gl_program target_name target_src)
 	add_executable(${target_name} ${target_src})
 	target_link_libraries (${target_name} LINK_PUBLIC gl_base_lib)

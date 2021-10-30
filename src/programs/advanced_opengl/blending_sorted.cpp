@@ -1,5 +1,5 @@
 #include <map>
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -240,5 +240,8 @@ namespace glrd
         glfwTerminate();
         return 0;
     }
+}
 
+int main() {
+    return glrd::BlendingSorted();
 }
