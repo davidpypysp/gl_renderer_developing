@@ -1,4 +1,4 @@
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -46,8 +46,8 @@ namespace glrd
 
         // build and compile our shader zprogram
         // ------------------------------------
-        Shader lightingShader("2.2.basic_lighting.vert", "2.2.basic_lighting.frag");
-        Shader lightCubeShader("1.colors.vert", "1.light_cube.frag");
+        Shader lightingShader("2.2.2.basic_lighting.vert", "2.2.2.basic_lighting.frag");
+        Shader lightCubeShader("2.1.1.colors.vert", "2.1.1.light_cube.frag");
 
         glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 

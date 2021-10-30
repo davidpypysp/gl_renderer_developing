@@ -1,0 +1,1 @@
+add_gl_program(basic_lighting basic_lighting.cpp)

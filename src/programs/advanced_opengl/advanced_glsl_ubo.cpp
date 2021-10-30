@@ -1,4 +1,4 @@
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -42,10 +42,10 @@ namespace glrd
 
         glEnable(GL_DEPTH_TEST);
 
-        Shader shaderRed("4.8.advanced_glsl.vert", "4.8.red.frag");
-        Shader shaderGreen("4.8.advanced_glsl.vert", "4.8.green.frag");
-        Shader shaderBlue("4.8.advanced_glsl.vert", "4.8.blue.frag");
-        Shader shaderYellow("4.8.advanced_glsl.vert", "4.8.yellow.frag");
+        Shader shaderRed("4.8.1.advanced_glsl.vert", "4.8.1.red.frag");
+        Shader shaderGreen("4.8.1.advanced_glsl.vert", "4.8.1.green.frag");
+        Shader shaderBlue("4.8.1.advanced_glsl.vert", "4.8.1.blue.frag");
+        Shader shaderYellow("4.8.1.advanced_glsl.vert", "4.8.1.yellow.frag");
 
         // set up vertex data (and buffer(s)) and configure vertex attributes
         // ------------------------------------------------------------------
@@ -253,5 +253,8 @@ namespace glrd
         glfwTerminate();
         return 0;
     }
+}
 
+int main() {
+    return glrd::AdvancedGLSLUbo();
 }

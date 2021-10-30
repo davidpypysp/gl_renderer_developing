@@ -1,0 +1,1 @@
+add_gl_program(advanced_glsl_ubo advanced_glsl_ubo.cpp)

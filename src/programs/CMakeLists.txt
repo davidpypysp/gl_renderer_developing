@@ -11,4 +11,6 @@ macro(add_gl_program target_name target_src)
 endmacro()
 
 add_subdirectory(basic)
+add_subdirectory(lighting)
+add_subdirectory(advanced_opengl)
 add_subdirectory(advanced_lighting)
