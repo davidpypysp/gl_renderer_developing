@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace gl_examples
+namespace glrd
 {
     class Model
     {
@@ -200,6 +200,6 @@ namespace gl_examples
         }
     };
 
-} // namespace gl_examples
+} // namespace glrd
 
 #endif

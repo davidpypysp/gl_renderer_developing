@@ -24,7 +24,7 @@
 #include "shader.hpp"
 #include "model.hpp"
 
-namespace gl_examples
+namespace glrd
 {
 	// Define Some Constants
 	const int mWidth = 1280;
@@ -70,6 +70,6 @@ namespace gl_examples
 	int GammaCorrection();
 	int ShadowMapping();
 	int PointShadowsSoft();
-} // namespace gl_examples
+} // namespace glrd
 
 #endif //~ Glitter Header

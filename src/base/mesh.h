@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace gl_examples
+namespace glrd
 {
     struct Vertex
     {
@@ -113,6 +113,6 @@ namespace gl_examples
             glBindVertexArray(0);
         }
     };
-} // namespace gl_examples
+} // namespace glrd
 
 #endif

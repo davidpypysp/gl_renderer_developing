@@ -1,6 +1,6 @@
 #include "local.hpp"
 
-namespace gl_examples
+namespace glrd
 {
     // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
     // ---------------------------------------------------------------------------------------------------------

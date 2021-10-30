@@ -1,6 +1,6 @@
 #include "programs/global.h"
 
-namespace gl_examples
+namespace glrd
 {
     // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
     // ---------------------------------------------------------------------------------------------------------
@@ -193,5 +193,5 @@ namespace gl_examples
 }
 
 int main() {
-    return gl_examples::AdvancedLighting();
+    return glrd::AdvancedLighting();
 }

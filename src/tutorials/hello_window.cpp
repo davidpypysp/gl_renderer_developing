@@ -5,7 +5,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-namespace gl_examples
+namespace glrd
 {
     int HelloWindow()
     {
@@ -49,4 +49,4 @@ namespace gl_examples
         return EXIT_SUCCESS;
     }
 
-} // namespace gl_examples
+} // namespace glrd

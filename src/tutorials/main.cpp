@@ -9,7 +9,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-namespace gl_examples
+namespace glrd
 {
 	Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
 	float lastX = mWidth / 2.0f;
@@ -113,9 +113,9 @@ namespace gl_examples
 		return textureID;
 	}
 
-} // namespace gl_examples
+} // namespace glrd
 
 int main(int argc, char *argv[])
 {
-	return gl_examples::PointShadowsSoft();
+	return glrd::PointShadowsSoft();
 }

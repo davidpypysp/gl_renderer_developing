@@ -1,6 +1,6 @@
 #include "local.hpp"
 
-namespace gl_examples
+namespace glrd
 {
     int AsteroidsInstanced()
     {

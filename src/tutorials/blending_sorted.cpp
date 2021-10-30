@@ -1,7 +1,7 @@
 #include <map>
 #include "local.hpp"
 
-namespace gl_examples
+namespace glrd
 {
 
     int BlendingSorted()

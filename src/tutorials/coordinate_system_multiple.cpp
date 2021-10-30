@@ -6,7 +6,7 @@
 #include "local.hpp"
 #include "shader.hpp"
 
-namespace gl_examples
+namespace glrd
 {
     int CoordinateSystemMultiple()
     {
@@ -219,4 +219,4 @@ namespace gl_examples
         return 0;
     }
 
-} // namespace gl_examples
+} // namespace glrd

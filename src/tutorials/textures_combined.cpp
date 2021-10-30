@@ -3,7 +3,7 @@
 #include "shader.hpp"
 #include "local.hpp"
 
-namespace gl_examples
+namespace glrd
 {
 
     int TexturesCombined()
@@ -153,4 +153,4 @@ namespace gl_examples
         return 0;
     }
 
-} // namespace gl_examples
+} // namespace glrd

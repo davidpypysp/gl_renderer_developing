@@ -1,6 +1,6 @@
 #include "local.hpp"
 
-namespace gl_examples
+namespace glrd
 {
     int ColorsProgram()
     {
@@ -160,4 +160,4 @@ namespace gl_examples
         glfwTerminate();
         return 0;
     }
-} // namespace gl_examples
+} // namespace glrd

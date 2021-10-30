@@ -26,7 +26,7 @@
 #include <cstdio>
 #include <cstdlib>
 
-namespace gl_examples
+namespace glrd
 {
 	// Define Some Constants
 	const int mWidth = 1280;
@@ -134,6 +134,6 @@ namespace gl_examples
 		return textureID;
 	}
 
-} // namespace gl_examples
+} // namespace glrd
 
 #endif

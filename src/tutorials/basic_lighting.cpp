@@ -1,6 +1,6 @@
 #include "local.hpp"
 
-namespace gl_examples
+namespace glrd
 {
     int BasicLightingProgram()
     {
@@ -177,4 +177,4 @@ namespace gl_examples
         return 0;
     }
 
-} // namespace gl_examples
+} // namespace glrd

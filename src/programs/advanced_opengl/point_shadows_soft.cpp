@@ -1,6 +1,6 @@
 #include "programs/global.h"
 
-namespace gl_examples
+namespace glrd
 {
 	bool shadows = true;
 	bool shadowsKeyPressed = false;
@@ -288,5 +288,5 @@ namespace gl_examples
 }
 
 int main() {
-	return gl_examples::PointShadowsSoft();
+	return glrd::PointShadowsSoft();
 }

@@ -1,6 +1,6 @@
 #include "programs/global.h"
 
-namespace gl_examples
+namespace glrd
 {
     unsigned int planeVAO;
 
@@ -321,5 +321,5 @@ namespace gl_examples
 }
 
 int main() {
-    return gl_examples::ShadowMapping();
+    return glrd::ShadowMapping();
 }
