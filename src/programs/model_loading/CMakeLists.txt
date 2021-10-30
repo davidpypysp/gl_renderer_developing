@@ -1,0 +1,1 @@
+add_gl_program(model_program model_program.cpp)

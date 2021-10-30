@@ -12,5 +12,6 @@ endmacro()
 
 add_subdirectory(basic)
 add_subdirectory(lighting)
+add_subdirectory(model_loading)
 add_subdirectory(advanced_opengl)
 add_subdirectory(advanced_lighting)

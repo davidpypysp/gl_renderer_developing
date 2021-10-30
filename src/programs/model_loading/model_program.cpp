@@ -1,4 +1,4 @@
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -72,3 +72,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::ModelProgram();
+}

@@ -1,1 +1,3 @@
 add_gl_program(basic_lighting basic_lighting.cpp)
+add_gl_program(materials materials.cpp)
+add_gl_program(multiple_lights multiple_lights.cpp)

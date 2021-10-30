@@ -178,3 +178,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::BasicLightingProgram();
+}
