@@ -27,7 +27,7 @@ else()
     endif()
 endif()
 
-include_directories(src/headers/
+include_directories(src/
                     vendor/assimp/include/
                     vendor/bullet3/src/
                     vendor/glad/include/
@@ -36,34 +36,18 @@ include_directories(src/headers/
                     vendor/stb/)
 
 file(GLOB VENDORS_SOURCES vendor/glad/src/glad.c)
-file(GLOB PROJECT_HEADERS src/headers/*.hpp)
-file(GLOB PROJECT_SOURCES src/tutorials/*.cpp)
 file(GLOB PROJECT_SHADERS src/shaders/*.comp
                           src/shaders/*.frag
                           src/shaders/*.geom
                           src/shaders/*.vert)
-file(GLOB PROJECT_CONFIGS CMakeLists.txt
-                          Readme.md
-                         .gitattributes
-                         .gitignore
-                         .gitmodules)
-
-source_group("Headers" FILES ${PROJECT_HEADERS})
-source_group("Shaders" FILES ${PROJECT_SHADERS})
-source_group("Sources" FILES ${PROJECT_SOURCES})
-source_group("Vendors" FILES ${VENDORS_SOURCES})
 
 add_definitions(-DGLFW_INCLUDE_NONE
                 -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
-add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS}
-                               ${PROJECT_SHADERS} ${PROJECT_CONFIGS}
-                               ${VENDORS_SOURCES})
-target_link_libraries(${PROJECT_NAME} assimp glfw
-                      ${GLFW_LIBRARIES} ${GLAD_LIBRARIES}
-                      BulletDynamics BulletCollision LinearMath)
+
+# Build main program
+add_executable(${PROJECT_NAME} src/gl_renderer_main.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
-
 add_custom_command(
     TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SHADERS} $<TARGET_FILE_DIR:${PROJECT_NAME}>
@@ -77,3 +61,5 @@ add_custom_command(
     COMMENT "Copy resource..."
 )
 
+# Build all programs
+add_subdirectory(src/programs)

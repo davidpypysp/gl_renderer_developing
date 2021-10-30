@@ -1,0 +1,7 @@
+add_gl_program(hello_window hello_window.cpp)
+add_gl_program(hello_triangle hello_triangle.cpp)
+add_gl_program(shaders shaders.cpp)
+add_gl_program(textures_combined textures_combined.cpp)
+add_gl_program(transformations transformations.cpp)
+add_gl_program(coordinate_system_multiple coordinate_system_multiple.cpp)
+add_gl_program(camera_class camera_class.cpp)

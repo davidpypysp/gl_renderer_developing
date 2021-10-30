@@ -1,0 +1,4 @@
+add_gl_program(advanced_lighting advanced_lighting.cpp)
+add_gl_program(gamma_correction gamma_correction.cpp)
+add_gl_program(shadow_mapping shadow_mapping.cpp)
+add_gl_program(point_shadows_soft point_shadows_soft.cpp)
