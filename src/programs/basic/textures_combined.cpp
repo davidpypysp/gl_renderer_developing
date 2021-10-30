@@ -1,7 +1,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 
-#include "shader.hpp"
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -37,7 +36,7 @@ namespace glrd
             return -1;
         }
 
-        Shader ourShader("4.2.texture.vert", "4.2.texture.frag");
+        Shader ourShader("1.4.2.texture.vert", "1.4.2.texture.frag");
 
         float vertices[] = {
             // positions          // colors           // texture coords
@@ -154,3 +153,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::TexturesCombined();
+}

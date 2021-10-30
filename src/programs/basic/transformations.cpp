@@ -3,8 +3,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "local.hpp"
-#include "shader.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -43,7 +42,7 @@ namespace glrd
 
         // build and compile our shader zprogram
         // ------------------------------------
-        Shader ourShader("5.1.transform.vert", "5.1.transform.frag");
+        Shader ourShader("1.5.1.transform.vert", "1.5.1.transform.frag");
 
         float vertices[] = {
             // positions          // texture coords
@@ -171,3 +170,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::Transformations();
+}

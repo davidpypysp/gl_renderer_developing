@@ -1,4 +1,4 @@
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -47,7 +47,7 @@ namespace glrd
 
         // build and compile our shader zprogram
         // ------------------------------------
-        Shader ourShader("7.4.camera.vert", "7.4.camera.frag");
+        Shader ourShader("1.7.4.camera.vert", "1.7.4.camera.frag");
 
         // set up vertex data (and buffer(s)) and configure vertex attributes
         // ------------------------------------------------------------------
@@ -235,3 +235,7 @@ namespace glrd
         return 0;
     }
 } // namespace glrd
+
+int main() {
+    return glrd::CameraClass();
+}

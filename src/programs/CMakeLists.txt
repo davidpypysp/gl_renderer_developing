@@ -10,4 +10,5 @@ macro(add_gl_program target_name target_src)
     	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME})
 endmacro()
 
+add_subdirectory(basic)
 add_subdirectory(advanced_lighting)

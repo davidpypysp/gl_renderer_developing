@@ -4,8 +4,7 @@
 #include <iostream>
 #include <cmath>
 
-#include "local.hpp"
-#include "shader.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -40,7 +39,7 @@ namespace glrd
             return -1;
         }
 
-        Shader ourShader("3.3.shader.vert", "3.3.shader.frag");
+        Shader ourShader("1.3.3.shader.vert", "1.3.3.shader.frag");
 
         float vertices[] = {
             // positions         // colors
@@ -86,3 +85,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::Shaders();
+}

@@ -3,8 +3,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <GLFW/glfw3.h>
 
-#include "local.hpp"
-#include "shader.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -46,7 +45,7 @@ namespace glrd
 
         // build and compile our shader zprogram
         // ------------------------------------
-        Shader ourShader("6.3.coordinate_systems.vert", "6.3.coordinate_systems.frag");
+        Shader ourShader("1.6.3.coordinate_systems.vert", "1.6.3.coordinate_systems.frag");
 
         // set up vertex data (and buffer(s)) and configure vertex attributes
         // ------------------------------------------------------------------
@@ -220,3 +219,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::CoordinateSystemMultiple();
+}

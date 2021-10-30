@@ -1,7 +1,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include "local.hpp"
+#include "programs/global.h"
 
 namespace glrd
 {
@@ -151,3 +151,7 @@ namespace glrd
     }
 
 } // namespace glrd
+
+int main() {
+    return glrd::HelloTriangle();
+}
