@@ -1,4 +1,4 @@
-#include "global.hpp"
+#include "programs/global.h"
 
 namespace gl_examples
 {
