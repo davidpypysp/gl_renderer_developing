@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 	std::cout << "gl_renderer_main" << std::endl;
 	return 0;
 }
