@@ -88,7 +88,7 @@ namespace glrd
 		camera.ProcessMouseScroll(yoffset);
 	}
 
-	unsigned int loadTexture(char const *path, bool gammaCorrection=false)
+	unsigned int loadTexture(char const *path, bool gammaCorrection = false)
 	{
 		unsigned int textureID;
 		glGenTextures(1, &textureID);
